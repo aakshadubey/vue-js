@@ -1,6 +1,34 @@
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  </head>
 
-<div id="app">
-	<p>You can see me!</p>
-	<p>Do you also see me?</p>
-</div>
+  <body>
+
+    <div id="app">
+        <p>You can see me!</p>
+        <p>Do you also see me?</p>
+        <p> {{ msg }}</p>
+        <button @click="increaseCounter">
+            increase
+        </button>
+        <p>
+            count- {{ count }}
+        </p>
+        <p v-show="count%2==0">even</p>
+        <p v-show="count%2==1">odd</p>
+        <div>
+            <input type="text" name="temp" v-model="msg">
+        </div>
+        <ul>
+            <li v-for="crop,index in listOfFruit" :key="index"> {{ crop }}</li>
+        </ul>
+    </div>
+  
+  </body>
+  <script src="app.js" ></script>
+</html>
